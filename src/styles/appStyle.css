@@ -51,12 +51,17 @@ h3 {
 }
 .main-wrap .navbar .navbar-nav .nav-list .nav-list-item .nav-link .link-text{
     font-weight: bold;
-    padding: 5px;
+    padding: 8px;
     padding-bottom: 4px;
 }
 
 a {
     text-decoration: none;
+}
+
+.fa{
+    color: black !important;
+    font-size: 15px !important;
 }
 
 label{
@@ -175,16 +180,35 @@ label{
     font-size: 16px;
 }
 
+.popup-body{
+    padding: 20px;
+    font-size: 16px;
+    width: 400px;
+    height: 700px;
+}
+
 .export-btn {
-    background: #1fbf55;
+    background: #18a3ba;
+    border: none;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.popup-btn{
+    
+    background: #6f757e;
     border: none;
     color: white;
     padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/*#0dc9f4 #18a3ba #6f757ess*/
+/*#0dc9f4 #18a3ba #6f757e #1fbf55*/
 
 form {
     display: flex;
@@ -236,3 +260,27 @@ textarea {
     min-height: 100px;
     resize: vertical
 }
+
+/* Fullscreen overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* move popup to top area */
+  padding-top: 80px; /* adjust height from top */
+  z-index: 1000;
+}
+
+.popup {
+  width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+

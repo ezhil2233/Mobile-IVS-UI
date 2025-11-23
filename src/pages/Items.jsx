@@ -1,6 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
+import Popup from "../UIComponentUtils/Popup.jsx"
+import UITable from "../UIComponentUtils/UITable.jsx"
+
 
 const Items = () => {
+
+   const [showPopup, setShowPopup] = useState(false);
+   const openPopup = () => setShowPopup(true);
+   const closePopup = () => setShowPopup(false);
+  
 
     return(
              <div className="page-grid">
@@ -28,13 +36,18 @@ const Items = () => {
 
                     <div className="box">
                         <div className="box-header">
-                            <span>📋 Current Stock Items</span>
-                            <button className="export-btn">Export</button>
+                            <span><i class="fa fa-list-ul" aria-hidden="true"></i> Current Stock Items</span>
+                            <button className="export-btn" onClick={openPopup} >Export</button>
                         </div>
 
                         <div className="box-body">
-                            Content goes here...
+                            <UITable/>
                         </div>
+
+                     {showPopup && (
+                        <Popup  closePopup={closePopup} />        
+                        )}
+
                     </div>
                 </div>
     );

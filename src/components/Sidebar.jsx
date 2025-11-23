@@ -7,7 +7,6 @@ const Sidebar = () => {
             <div className="navbar-nav">
                 <div className="breadgrum-content">
                     <h3>
-                        <i className="fa fa-mobile"></i>
                         <span className="title-text">Mobile Shop</span>
                     </h3>
                 </div>
@@ -16,11 +15,11 @@ const Sidebar = () => {
                     <ul className="nav-list">
                         <li className="nav-list-item">
                             <NavLink to="/" end className="nav-link" >
-                                <i className="fa fa-mobile black-icon"></i> <span className="link-text">Dashboard</span>
+                                <i className="fa fa-mobile" aria-hidden="true"></i> <span className="link-text">Dashboard</span>
                             </NavLink>
                         </li>
                         <li className="nav-list-item">
-                             <NavLink to="/item" end className="nav-link" >
+                            <NavLink to="/item" end className="nav-link" >
                                 <i className="fa fa-truck" aria-hidden="true"></i><span className="link-text">item</span>
                             </NavLink>
                         </li>
