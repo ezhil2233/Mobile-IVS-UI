@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
-
+import TableStyle from "../UIComponentUtils/TableStyle.jsx"
 
 const loans = [
     { id: 1, name: "Personal Loan", amount: 5000 },
@@ -16,7 +16,7 @@ const ActionButton = ({ row }) => {
 
     return (
         <div className="">
-            <button className="export-btn" onClick={handleClick}><i class="fa fa-pencil-square" aria-hidden="true"></i>Edit</button>
+            <button className="export-btn" onClick={handleClick}><i className="fa fa-pencil-square"></i>Edit</button>
         </div>
     );
 };
@@ -29,22 +29,24 @@ const columns = [
         name: "Actions",
         cell: row => <ActionButton row={row} />,
         ignoreRowClick: true,   // prevents row click when button clicked
-        allowOverflow: true,
-        button: true,
+       // allowOverflow: true,
+       // button: true,
     },
 ];
 
 
 const UITable = () => {
     return (
-        <div class="row">
+        <div className="row">
             <div className="container mt-4">
                 <DataTable
                     columns={columns}
                     data={loans}
                     pagination
-                    highlightOnHover
+                    striped
+                    highlightOnHover                    
                     responsive
+                    customStyles={TableStyle}
                 />
             </div>
         </div>

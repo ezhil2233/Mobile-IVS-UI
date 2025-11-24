@@ -197,6 +197,10 @@ label{
     font-weight: bold;
 }
 
+.export-btn i {
+  margin-right: 6px; /* change value as you like */
+}
+
 .popup-btn{
     
     background: #6f757e;
@@ -254,6 +258,13 @@ textarea:focus,
 select:focus {
     box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.06);
     border-color: var(--accent)
+}
+.btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+
 }
 
 textarea {

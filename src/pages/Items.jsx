@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import Popup from "../UIComponentUtils/Popup.jsx"
+import Popup from "../UIComponentUtils/Popup.jsx";
 import UITable from "../UIComponentUtils/UITable.jsx"
+
 
 
 const Items = () => {
@@ -18,7 +19,7 @@ const Items = () => {
                         </div>
 
                         <div className="box-body">
-                            <form id="userForm" novalidate>
+                            <form id="userForm">
                                     <div className="row">
                                         <label for="email">Email</label>
                                         <input id="email" name="email" type="email" required
@@ -30,13 +31,14 @@ const Items = () => {
                                         <input id="phone" name="phone" type="tel" pattern="[0-9+\-\s]{7,20}"
                                             placeholder="+91 98765 43210"/>
                                     </div>
+                                     <button className="export-btn" >Save item</button>
                             </form>
                         </div>
                     </div>
 
                     <div className="box">
                         <div className="box-header">
-                            <span><i class="fa fa-list-ul" aria-hidden="true"></i> Current Stock Items</span>
+                            <span><i className="fa fa-list-ul" aria-hidden="true"></i> Current Stock Items</span>
                             <button className="export-btn" onClick={openPopup} >Export</button>
                         </div>
 
