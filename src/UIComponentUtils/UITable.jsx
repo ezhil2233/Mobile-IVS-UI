@@ -39,6 +39,7 @@ const UITable = () => {
     return (
         <div className="row">
             <div className="container mt-4">
+                {console.log("i am rendering ...")}
                 <DataTable
                     columns={columns}
                     data={loans}
