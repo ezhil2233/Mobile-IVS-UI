@@ -8,34 +8,17 @@ const loans = [
     { id: 3, name: "Car Loan", amount: 10000 },
 ];
 
-// Action button component
-const ActionButton = ({ row }) => {
-    const handleClick = () => {
-        alert(`Editing ${row.name}`);
-    };
 
-    return (
-        <div className="">
-            <button className="export-btn" onClick={handleClick}><i className="fa fa-pencil-square"></i>Edit</button>
-        </div>
-    );
-};
 
 const columns = [
     { name: "ID", selector: row => row.id, sortable: true },
     { name: "Name", selector: row => row.name, sortable: true },
     { name: "Amount", selector: row => row.amount, sortable: true },
-    {
-        name: "Actions",
-        cell: row => <ActionButton row={row} />,
-        ignoreRowClick: true,   // prevents row click when button clicked
-       // allowOverflow: true,
-       // button: true,
-    },
+   
 ];
 
 
-const UITable = () => {
+const UITable = ({data}) => {
     return (
         <div className="row">
             <div className="container mt-4">

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
+import DataTable from "react-data-table-component";
 import UITable from "../UIComponentUtils/UITable.jsx"
 import Popup from "../UIComponentUtils/Popup.jsx";
+import { axiosAPI } from "../utils/AxiosCtx.js"
+import TableStyle from "../UIComponentUtils/TableStyle.jsx"
+import { productColumns } from "../tables/productTable.js"
+
 
 const CurrentStockItem = ({ refreshKey }) => {
 
@@ -12,17 +17,16 @@ const CurrentStockItem = ({ refreshKey }) => {
     const [data, setData] = useState([]);
 
     const fetchData = async () => {
-        // const res =await axios.get("");
-        //setData(res.data)
+        const res =await axiosAPI.get("/getProducts");    
+        console.log(res);
+        setData(res.data)
     }
 
     useEffect(() => {
         fetchData();
     }, [refreshKey])
 
-    useEffect(() => {
-        fetchData();
-    }, [])
+ 
 
     return (
         <div className="box">
@@ -30,7 +34,15 @@ const CurrentStockItem = ({ refreshKey }) => {
                 <span><i className="fa fa-list-ul" aria-hidden="true"></i> Current Stock Items</span>
                 <button className="export-btn" onClick={openPopup} >Export</button>
             </div>
-            <UITable />
+            <DataTable
+                    columns={productColumns}
+                    data={data}
+                    pagination
+                    striped
+                    highlightOnHover                    
+                    responsive
+                    customStyles={TableStyle}
+                />
             {showPopup && (
                 <Popup closePopup={closePopup} />
             )}
