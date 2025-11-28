@@ -17,7 +17,7 @@ const CurrentStockItem = ({ refreshKey }) => {
     const [data, setData] = useState([]);
 
     const fetchData = async () => {
-        const res =await axiosAPI.get("/getProducts");    
+        const res = await axiosAPI.get("/getProducts");
         console.log(res);
         setData(res.data)
     }
@@ -26,23 +26,27 @@ const CurrentStockItem = ({ refreshKey }) => {
         fetchData();
     }, [refreshKey])
 
- 
+
 
     return (
-        <div className="box">
-            <div className="box-header">
+        <div className="stock-box">
+            <div className="stock-box-header">
                 <span><i className="fa fa-list-ul" aria-hidden="true"></i> Current Stock Items</span>
                 <button className="export-btn" onClick={openPopup} >Export</button>
             </div>
-            <DataTable
+            <div className="table-scroll">
+                <DataTable
                     columns={productColumns}
                     data={data}
                     pagination
                     striped
-                    highlightOnHover                    
+                    highlightOnHover
                     responsive
                     customStyles={TableStyle}
+                    fixedHeader
+                    fixedHeaderScrollHeight="100%"
                 />
+            </div>
             {showPopup && (
                 <Popup closePopup={closePopup} />
             )}
