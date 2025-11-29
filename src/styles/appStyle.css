@@ -180,6 +180,31 @@ label{
     font-size: 16px;
 }
 
+.stock-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    height: 400px;
+}
+
+.stock-box-header {
+    background: #d9293a;
+    /* Red banner */
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.stock-box-body {
+    padding: 20px;
+    font-size: 16px;
+}
+
 .popup-body{
     padding: 20px;
     font-size: 16px;
@@ -241,6 +266,7 @@ input[type=email],
 input[type=password],
 input[type=tel],
 input[type=date],
+input[type=number],
 select,
 textarea {
     width: 95%;
@@ -259,6 +285,7 @@ select:focus {
     box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.06);
     border-color: var(--accent)
 }
+
 .btn-row {
     display: flex;
     justify-content: center;

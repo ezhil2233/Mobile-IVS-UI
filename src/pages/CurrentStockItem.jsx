@@ -43,8 +43,8 @@ const CurrentStockItem = ({ refreshKey }) => {
                     highlightOnHover
                     responsive
                     customStyles={TableStyle}
-                    fixedHeader
-                    fixedHeaderScrollHeight="100%"
+                    paginationPerPage={5} // default
+                    paginationRowsPerPageOptions={[5, 10, 20, 50]} // custom options
                 />
             </div>
             {showPopup && (
