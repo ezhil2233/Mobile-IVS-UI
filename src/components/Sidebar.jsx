@@ -15,12 +15,32 @@ const Sidebar = () => {
                     <ul className="nav-list">
                         <li className="nav-list-item">
                             <NavLink to="/" end className="nav-link" >
-                                <i className="fa fa-mobile" aria-hidden="true"></i> <span className="link-text">Dashboard</span>
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i><span className="link-text">items</span>
                             </NavLink>
                         </li>
                         <li className="nav-list-item">
-                            <NavLink to="/item" end className="nav-link" >
-                                <i className="fa fa-truck" aria-hidden="true"></i><span className="link-text">item</span>
+                            <NavLink to="/supplier" end className="nav-link" >
+                                <i className="fa fa-truck" aria-hidden="true"></i> <span className="link-text">Supplier</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-list-item">
+                            <NavLink to="/category" end className="nav-link" >
+                                <i class="fa fa-tags" aria-hidden="true"></i> <span className="link-text">Category</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-list-item">
+                            <NavLink to="/selling" end className="nav-link" >
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i> <span className="link-text">Selling</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-list-item">
+                            <NavLink to="/dashboard" end className="nav-link" >
+                                <i class="fa fa-line-chart" aria-hidden="true"></i> <span className="link-text">Dashboard</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-list-item">
+                            <NavLink to="/logout" end className="nav-link" >
+                                <i class="fa fa-sign-out" aria-hidden="true"></i> <span className="link-text">Logout</span>
                             </NavLink>
                         </li>
                     </ul>

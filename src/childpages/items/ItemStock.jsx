@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
-import UITable from "../UIComponentUtils/UITable.jsx"
-import Popup from "../UIComponentUtils/Popup.jsx";
-import { axiosAPI } from "../utils/AxiosCtx.js"
-import TableStyle from "../UIComponentUtils/TableStyle.jsx"
-import { productColumns } from "../tables/productTable.js"
+import Popup from "../../UIComponentUtils/Popup.jsx";
+import { axiosAPI } from "../../utils/AxiosCtx.js"
+import TableStyle from "../../UIComponentUtils/TableStyle.jsx"
+import { productColumns } from "../../tables/productTable.js"
 
 
 const CurrentStockItem = ({ refreshKey }) => {

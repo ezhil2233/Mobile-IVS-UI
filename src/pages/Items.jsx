@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import AddItem from "../pages/AddItem.jsx";
-import CurrentStockItem from "../pages/CurrentStockItem.jsx";
+import ItemAdd from "../childpages/items/ItemAdd.jsx";
+import ItemStock from "../childpages/items/ItemStock.jsx";
 
 
 const Items = () => {
@@ -12,8 +12,8 @@ const Items = () => {
 
     return (
         <div className="page-grid">
-            <AddItem onSuccess={handleDataInsert} />
-            <CurrentStockItem refreshKey={refreshKey} />
+            <ItemAdd onSuccess={handleDataInsert} />
+            <ItemStock refreshKey={refreshKey} />
         </div>
     );
 }
