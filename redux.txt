@@ -1,0 +1,54 @@
+import { configureStore } from "@reduxjs/toolkit";
+import customerReducer from "../slices/itemSlice"
+
+export const itemStore = configureStore({
+    reducer :{
+        customers:customerReducer
+    }
+})
+
+
+import { createSlice } from "@reduxjs/toolkit";
+//state variable inside below reducer having the type of initialState variable
+const initialState = [];
+
+const customerSlice = createSlice({
+    name: 'item',
+    initialState,
+    reducers :{
+        addCustomer(state, action){
+            state.push(action.payload)
+        }
+    }
+})
+
+//action creater
+export const {addCustomer} = customerSlice.actions;
+export default customerSlice.reducer
+
+
+Add Logic
+import {addCustomer as addCustomerAction} from "./customerSlice"
+import {useDispatch} from "@redux/toolkit"
+const dispatch = useDispatch()
+
+function addCustomer(){
+   dispatch(addCustomerAction(input))
+  }
+
+
+View Logic
+import {useSelector} from "@redux/toolkit"
+const customers = useSelector((state) => state.customers)
+
+
+
+
+
+
+
+
+
+
+
+
