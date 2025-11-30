@@ -1,3 +1,7 @@
+ npm i react-redux @reduxjs/toolkit
+
+
+
 import { configureStore } from "@reduxjs/toolkit";
 import customerReducer from "../slices/itemSlice"
 
